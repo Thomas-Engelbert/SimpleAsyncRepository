@@ -25,4 +25,27 @@ public class InMemoryBaseRepositoryTests
         int count = await repository.Count ();
         count.ShouldBe ( 0 );
     }
+
+    [Fact]
+    public async Task ShouldAddMultipleEntitiesSimultaneously ()
+    {
+        // Arrange
+        string testName = "Test";
+        IEnumerable<TestModel> models = new int[100]
+            .Select ( i => new TestModel { Name = testName } );
+        InMemoryBaseRepository<TestModel> repository = new ();
+
+        // Act
+        await Task.WhenAll ( models.Select ( repository.Upsert ) );
+        int count = await repository.Count ();
+        IList<TestModel> content = await repository.GetAll ();
+        IEnumerable<Guid> guids = content.Select ( model => model.Id );
+        bool isAllNamedCorrectly = content.All ( model => model.Name == testName );
+
+        // Assert
+        count.ShouldBe ( 100 );
+        content.ShouldNotBeEmpty ();
+        isAllNamedCorrectly.ShouldBeTrue ();
+        guids.ShouldBeUnique ();
+    }
 }
