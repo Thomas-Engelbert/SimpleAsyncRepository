@@ -20,6 +20,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{DE296BF5-8EF1-497A-84AA-58A39862F16B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleAsyncRepository.Demo.InMemory.Basic", "SimpleAsyncRepository.Demo.InMemory.Basic\SimpleAsyncRepository.Demo.InMemory.Basic.csproj", "{B48EA8DC-D44C-49B4-89EE-74704E0391D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +42,10 @@ Global
 		{B5428AE5-B099-48FE-A5FD-FF213A38FE6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5428AE5-B099-48FE-A5FD-FF213A38FE6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5428AE5-B099-48FE-A5FD-FF213A38FE6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B48EA8DC-D44C-49B4-89EE-74704E0391D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B48EA8DC-D44C-49B4-89EE-74704E0391D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B48EA8DC-D44C-49B4-89EE-74704E0391D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B48EA8DC-D44C-49B4-89EE-74704E0391D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +54,7 @@ Global
 		{3B98C334-2E2F-4165-BA69-8883A0A3F525} = {F693244B-EF0F-4471-ACFF-B2631C43A066}
 		{C0E1ADEE-51F0-4119-8B73-4640771C126F} = {F693244B-EF0F-4471-ACFF-B2631C43A066}
 		{B5428AE5-B099-48FE-A5FD-FF213A38FE6D} = {D285B282-8202-4923-AAA0-D36EF16549A9}
+		{B48EA8DC-D44C-49B4-89EE-74704E0391D0} = {DE296BF5-8EF1-497A-84AA-58A39862F16B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B7F6991-473F-4491-835F-54A52A9375BB}
