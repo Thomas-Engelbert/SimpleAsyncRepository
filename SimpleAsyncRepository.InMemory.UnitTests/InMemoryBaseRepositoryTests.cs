@@ -48,4 +48,25 @@ public class InMemoryBaseRepositoryTests
         isAllNamedCorrectly.ShouldBeTrue ();
         guids.ShouldBeUnique ();
     }
+
+    [Fact]
+    public async Task ShouldUpdateSingleItemByIdCorrectly ()
+    {
+        // Arrange
+        string nameBefore = "TestBefore";
+        string nameAfter = "TestAfter";
+        Guid guid = Guid.NewGuid ();
+        TestModel modelBefore = new () { Id = guid, Name = nameBefore };
+        TestModel modelAfter = new () { Id = guid, Name = nameAfter };
+        InMemoryBaseRepository<TestModel> repository = new ();
+
+        // Act
+        await repository.Upsert ( modelBefore );
+        await repository.Upsert ( modelAfter );
+        TestModel? actualModelAfter = await repository.GetById ( guid );
+
+        // Assert
+        actualModelAfter.ShouldNotBeNull ();
+        actualModelAfter.Name.ShouldBe ( nameAfter );
+    }
 }
