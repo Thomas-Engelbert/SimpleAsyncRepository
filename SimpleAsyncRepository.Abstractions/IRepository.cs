@@ -2,6 +2,8 @@
 
 public interface IRepository<T> where T : class, IModel
 {
+    Task<int> Count ();
+
     Task<T?> GetById ( Guid id );
 
     Task<IList<T>> GetAll ();
