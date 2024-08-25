@@ -9,6 +9,11 @@ This is a super simplistic and straight forward implementation of the repository
 Simply add the desired NuGet package to your project. At the moment there's `SimpleAsyncRepository.Abstractions` and `SimpleAsyncRepository.InMemory`.
 
 ## Usage
+[Basic Demo](https://github.com/Thomas-Engelbert/SimpleAsyncRepository/tree/main/SimpleAsyncRepository.Demo.InMemory.Basic)
+
+
+> TODO: Turn the following example into a demo as well.
+
 1. Create your model type (i.e. `MyModel`). It must implement `SimpleAsyncRepository.Abstractions.IModel`.
 1. Create an interface defining your repository type (i.e. `IMyModelRepository`). It should inherit from `SimpleAsyncRepository.Abstractions.IRepository<T>`.
 1. Create an implementation of your repository by inheriting from the implementation of your choice (i.e. `InMemoryBaseRepository`). Make it also inherit from your interface.
