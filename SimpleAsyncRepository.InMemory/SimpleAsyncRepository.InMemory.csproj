@@ -1,5 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <ItemGroup>
-    <ProjectReference Include="..\SimpleAsyncRepository.Abstractions\SimpleAsyncRepository.Abstractions.csproj" />
-  </ItemGroup>
+
+    <PropertyGroup>
+
+        <!-- Nuget properties -->
+        <Description>A simplistic in-memory implementation of the repository pattern.</Description>
+        <PackageId>SimpleAsyncRepository.InMemory</PackageId>
+        <Title>Simple Async In-memory Repository</Title>
+
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\SimpleAsyncRepository.Abstractions\SimpleAsyncRepository.Abstractions.csproj" />
+    </ItemGroup>
+    
 </Project>

@@ -1,3 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    
+    <PropertyGroup>
 
+        <!-- Nuget properties -->
+        <Description>This is the shared contract for the different Implementations.</Description>
+        <PackageId>SimpleAsyncRepository.Abstractions</PackageId>
+        <Title>Simple Async Abstract Repository</Title>
+        
+    </PropertyGroup>
+    
 </Project>
