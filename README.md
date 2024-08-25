@@ -3,19 +3,46 @@
 This is a super simplistic and straight forward implementation of the repository pattern. I found myself doing it over and over again and again for different projects and so I decided to just turn it into a NuGet package.
 
 # Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Installation process
+
+Simply add the desired NuGet package to your project. At the moment there's `SimpleAsyncRepository.Abstractions` and `SimpleAsyncRepository.InMemory`.
+
+## Usage
+1. Create your model type (i.e. `MyModel`). It must implement `SimpleAsyncRepository.Abstractions.IModel`.
+1. Create an interface defining your repository type (i.e. `IMyModelRepository`). It should inherit from `SimpleAsyncRepository.Abstractions.IRepository<T>`.
+1. Create an implementation of your repository by inheriting from the implementation of your choice (i.e. `InMemoryBaseRepository`). Make it also inherit from your interface.
+1. Register your interface and implementation with the DI system of your choice.
+
+#### MyModel.cs
+```csharp
+using SimpleAsyncRepository.Abstractions;
+
+public class MyModel : IModel
+{
+    public Guid Id { get; set; }
+    public string? Foo { get; set; }
+    public int Bar { get; set; }
+    public bool Baz { get; set; }
+}
+```
+
+#### IMyModelRepository.cs
+```csharp
+using SimpleAsyncRepository.Abstractions;
+
+public interface IMyModelRepository : IRepository<MyModel> {}
+```
+
+#### MyModelRepository.cs
+```csharp
+using SimpleAsyncRepository.InMemory;
+
+public class MyModelRepository<MyModel> : InMemoryBaseRepository<MyModel>, IMyModelRepository {}
+```
+
+## Latest releases
+1.0.0 - Initial Release
 
 # Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+Thank you for your consideration. At the moment I'm not looking for contributions.
