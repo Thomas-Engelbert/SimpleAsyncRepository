@@ -1,7 +1,7 @@
-﻿namespace SimpleAsyncRepository.InMemory.UnitTests;
-
+﻿
 using Shouldly;
 
+namespace SimpleAsyncRepository.InMemory.UnitTests;
 public class InMemoryBaseRepositoryTests
 {
     #region Instantiation
