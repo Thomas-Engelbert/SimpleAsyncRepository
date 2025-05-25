@@ -14,7 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\SimpleAsyncRepository.InMemory\SimpleAsyncRepository.InMemory.csproj" />
+      <ProjectReference Include="..\..\src\SimpleAsyncRepository.InMemory\SimpleAsyncRepository.InMemory.csproj" />
     </ItemGroup>
 
     <ItemGroup>

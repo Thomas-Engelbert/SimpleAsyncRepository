@@ -1,5 +1,7 @@
 ﻿# Simple demo for Repository use
 
+This is the most basic and straight forward use case for the InMemoryRepository. Direct instantiation and usage.
+
 #### MyModel.cs
 Example of a simple model class. Must implement `SimpleAsyncRepository.Abstractions.IModel`.
 
