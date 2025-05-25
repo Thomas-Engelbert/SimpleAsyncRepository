@@ -47,6 +47,7 @@ public class MyModelRepository<MyModel> : InMemoryBaseRepository<MyModel>, IMyMo
 ```
 
 ## Latest releases
+1.0.1 - Update solution to .NET 9.0
 1.0.0 - Initial Release
 
 # Contribute
