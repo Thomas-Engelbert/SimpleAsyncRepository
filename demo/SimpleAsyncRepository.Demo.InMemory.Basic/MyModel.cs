@@ -1,6 +1,6 @@
-﻿namespace SimpleAsyncRepository.Demo.InMemory.Basic;
+﻿using SimpleAsyncRepository.Abstractions;
 
-using SimpleAsyncRepository.Abstractions;
+namespace SimpleAsyncRepository.Demo.InMemory.Basic;
 
 internal class MyModel : IModel
 {

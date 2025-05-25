@@ -1,6 +1,6 @@
-﻿namespace SimpleAsyncRepository.Abstractions;
+﻿using System;
 
-using System;
+namespace SimpleAsyncRepository.Abstractions;
 
 public interface IModel
 {

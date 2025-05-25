@@ -1,8 +1,8 @@
-﻿namespace SimpleAsyncRepository.InMemory.UnitTests;
-
+﻿
 using System;
 using SimpleAsyncRepository.Abstractions;
 
+namespace SimpleAsyncRepository.InMemory.UnitTests;
 /// <summary>
 /// Minimalistic model type for testing purposes
 /// </summary>

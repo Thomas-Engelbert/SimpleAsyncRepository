@@ -1,41 +1,41 @@
-﻿namespace SimpleAsyncRepository.Demo.InMemory.Basic;
+﻿using SimpleAsyncRepository.InMemory;
 
-using SimpleAsyncRepository.InMemory;
+namespace SimpleAsyncRepository.Demo.InMemory.Basic;
 
 internal static class PrintHelper
 {
-    public static void PrintItem ( MyModel item )
+    public static void PrintItem(MyModel item)
     {
-        Console.WriteLine ( $"Id: {item.Id}" );
-        Console.WriteLine ( $"Foo: {item.Foo}" );
-        Console.WriteLine ( $"Bar: {item.Bar}" );
-        Console.WriteLine ( $"Baz: {item.Baz}" );
+        Console.WriteLine($"Id: {item.Id}");
+        Console.WriteLine($"Foo: {item.Foo}");
+        Console.WriteLine($"Bar: {item.Bar}");
+        Console.WriteLine($"Baz: {item.Baz}");
     }
 
-    public static async Task PrintRepositoryState ( string message, InMemoryBaseRepository<MyModel> repository )
+    public static async Task PrintRepositoryState(string message, InMemoryBaseRepository<MyModel> repository)
     {
-        Console.WriteLine ( $"=============== {message} ===============" );
+        Console.WriteLine($"=============== {message} ===============");
 
-        int count = await repository.Count ();
-        Console.WriteLine ( $"Number of entities contained: {count}" );
-        if ( count == 0 )
+        int count = await repository.Count();
+        Console.WriteLine($"Number of entities contained: {count}");
+        if (count == 0)
         {
-            Console.WriteLine ();
+            Console.WriteLine();
             return;
         }
 
-        IList<MyModel> allItems = await repository.GetAll ();
+        IList<MyModel> allItems = await repository.GetAll();
 
-        for ( int i = 0; i < allItems.Count; ++i )
+        for (int i = 0; i < allItems.Count; ++i)
         {
-            Console.WriteLine ( $"=============== # {i}\n" );
+            Console.WriteLine($"=============== # {i}\n");
             MyModel item = allItems[i];
-            PrintItem ( item );
-            Console.WriteLine ();
+            PrintItem(item);
+            Console.WriteLine();
         }
 
-        Console.WriteLine ( "=============== End" );
+        Console.WriteLine("=============== End");
 
-        Console.WriteLine ();
+        Console.WriteLine();
     }
 }
